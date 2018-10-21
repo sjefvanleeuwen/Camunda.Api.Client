@@ -1,0 +1,18 @@
+version: '3.4'
+
+x-logging:
+  &default-logging
+  options:
+    max-size: "10m"
+    max-file: "5"
+  driver: json-file
+
+services:
+  api:
+    image: Camunda.Nlx.Service
+    build:
+      context: ./Camunda.Nlx.Service
+      dockerfile: Dockerfile
+    hostname: Camunda.Nlx.Service
+    restart: always
+    logging: *default-logging

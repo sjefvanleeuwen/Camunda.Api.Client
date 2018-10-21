@@ -259,7 +259,7 @@ namespace Camunda.Api.Client.UserTask
         /// <summary>
         /// Restrict to tasks that were created after the given date.
         /// </summary>
-        public DateTime? CreatedAfter;
+        public string CreatedAfter;
         /// <summary>
         /// Restrict to tasks that were created after the date described by the given expression. See the user guide for more information on available functions. The expression must evaluate to a java.util.Date or org.joda.time.DateTime object.
         /// </summary>

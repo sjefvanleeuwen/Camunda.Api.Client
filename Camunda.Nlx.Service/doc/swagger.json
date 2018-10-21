@@ -1,0 +1,119 @@
+{
+  "x-generator": "NSwag v11.18.3.0 (NJsonSchema v9.10.67.0 (Newtonsoft.Json v11.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "Camunda NLX Service",
+    "description": "NLX Compliant API for using the Camunda Business Process Engine on the inter organizational transport ring",
+    "contact": {
+      "name": "Sjef van Leeuwen",
+      "url": "https://github.com/sjefvanleeuwen/",
+      "email": "sjef.van.leeuwen@wigo4it.nl"
+    },
+    "license": {
+      "name": "Use under European Union Public License, version 1.2 (EUPL-1.2)",
+      "url": "https://opensource.org/licenses/EUPL-1.1"
+    },
+    "version": "1.0.0"
+  },
+  "host": "127.0.0.1:8081",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/Dmn/{id}": {
+      "get": {
+        "tags": [
+          "Dmn"
+        ],
+        "summary": "Get value by providing an Id",
+        "operationId": "Dmn_Get",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/api/Dmn": {
+      "post": {
+        "tags": [
+          "Dmn"
+        ],
+        "summary": "Execute a Decision Model",
+        "operationId": "Dmn_Post",
+        "parameters": [
+          {
+            "name": "payload",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DmnExecutionPayload"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "DmnExecutionPayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "uri": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DmnInputParameters"
+          }
+        },
+        "input": {
+          "type": "string"
+        }
+      }
+    },
+    "DmnInputParameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
