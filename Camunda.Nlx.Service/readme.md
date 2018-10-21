@@ -27,7 +27,7 @@ The following decision table is modeled
 
 ```json
 {
-  "uri" : "https://raw.githubusercontent.com/sjefvanleeuwen/camunda-process-examples/master/basic-dmn/basic-dmn/Resources/temperatureCategorizationDecision.dmn",
+  "uri" : "https://raw.githubusercontent.com/sjefvanleeuwen/Camunda.Api.Client/master/Camunda.Nlx.Service/doc/temperatureCategorizationDecision.dmn",
   "decisionDefinition" : "temperatureCategorizationDecision",
   "input" : "{\"temperature\":50}"
 }
@@ -44,8 +44,13 @@ The following decision table is modeled
 
 ### Service location
 
+http://{your-outway-address}:{your-outway-port}/sjef-van-leeuwen/bpm-service
 
+![nlx-directory](./doc/nlx-directory.png)
+
+For more information on setting up an outway on NLX can be found at:
+https://docs.nlx.io/
 
 ### API Description on Swaggerhub
 
-Follow [this]("https://petstore.swagger.io/?url=https://raw.githubusercontent.com/sjefvanleeuwen/Camunda.Api.Client/master/Camunda.Nlx.Service/doc/swagger.json") link
+Follow [this](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/sjefvanleeuwen/Camunda.Api.Client/master/Camunda.Nlx.Service/doc/swagger.json) link

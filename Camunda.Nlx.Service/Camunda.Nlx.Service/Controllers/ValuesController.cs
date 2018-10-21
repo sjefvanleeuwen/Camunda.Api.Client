@@ -20,6 +20,8 @@ namespace camunda.nlx.service.Controllers
 
         public string Input{get;set;}
 
+        public string DecisionDefinition {get;set;}
+
         // public DmnExecutionPayload(){
         //     Parameters = new List<DmnInputParameters>();
         // }
@@ -56,7 +58,7 @@ namespace camunda.nlx.service.Controllers
         {
             using(WebClient client = new WebClient()) {
                 string dmnModel = client.DownloadString(payload.Uri);
-                return await nodeServices.InvokeAsync<string>("decision.js",dmnModel,payload.Input);
+                return await nodeServices.InvokeAsync<string>("decision.js",dmnModel,payload.Input, payload.DecisionDefinition);
             }
         }
 
