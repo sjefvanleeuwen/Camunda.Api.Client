@@ -1,18 +1,19 @@
-# Camunda on NLX
+# BPMN / DMN as a NLX Common Ground Service
+![](https://directory.nlx.io/static/media/logo.325e26d6.svg)
 
 ## Status
 
-This project is highly experimental. It researches the possibility in combining NLX transport network in BPM and Rules (DMN decision modelling language).
+This project is highly experimental. It researches the possibility in combining NLX transport network in BPM and Rules (DMN decision modeling language).
 
 ## Conceptual Idea
 
-Camunda provides a dmn modeler, for modeling decisions. These decisions can then be stored forked and versioned on Github.
+Camunda provides a DMN modeler for modeling decisions. These decisions can then be stored and forked and versioned on Github. These rules are easily versioned as they are defined as XML. With forking organizations can reuse rules and make slight alterations to them.
 
 The dmn model is executed using a RESTfull API that is provided on the inter organizational network NLX.
 
 Organizaitons on the NLX transport ring can then executre rules that they together maintain.
 
-## Example
+## DMN As An NLX Service Example
 
 In the example below, we use a DMN decision table located on Github master branch and executes it via NLX.
 
@@ -26,9 +27,9 @@ The following decision table is modeled
 
 ```json
 {
-  "uri": "https://raw.githubusercontent.com/sjefvanleeuwen/camunda-process-examples/master/basic-dmn/basic-dmn/Resources/temperatureCategorizationDecision.dmn",
-  "decisionDefinition" : "temperatureCategorizationDecision"
-  "Input": "{\"temperature\":50}"
+  "uri" : "https://raw.githubusercontent.com/sjefvanleeuwen/camunda-process-examples/master/basic-dmn/basic-dmn/Resources/temperatureCategorizationDecision.dmn",
+  "decisionDefinition" : "temperatureCategorizationDecision",
+  "input" : "{\"temperature\":50}"
 }
 ```
 
@@ -41,6 +42,10 @@ The following decision table is modeled
 
 ```
 
+### Service location
+
+
+
 ### API Description on Swaggerhub
 
-Follow [this]("") link
+Follow [this]("https://petstore.swagger.io/?url=https://raw.githubusercontent.com/sjefvanleeuwen/Camunda.Api.Client/master/Camunda.Nlx.Service/doc/swagger.json") link
