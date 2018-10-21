@@ -3,15 +3,19 @@
 
 ## Status
 
-This project is highly experimental. It researches the possibility in combining NLX transport network in BPM and Rules (DMN decision modeling language).
+This project is highly experimental. It researches the possibility in combining NLX transport network for data and business process management "(BPM) as a service" and "Rules as a Service" (DMN decision modeling language).
+
+Currently single table Decision models are supported.
 
 ## Conceptual Idea
 
-Camunda provides a DMN modeler for modeling decisions. These decisions can then be stored and forked and versioned on Github. These rules are easily versioned as they are defined as XML. With forking organizations can reuse rules and make slight alterations to them.
+Several open standard products provide a DMN modeler for modeling decisions. DMN's are part of a world wide industrial standard maintained by the OMG group.
 
-The dmn model is executed using a RESTfull API that is provided on the inter organizational network NLX.
+https://www.omg.org/spec/DMN/About-DMN/
 
-Organizaitons on the NLX transport ring can then executre rules that they together maintain.
+These decisions could be stored, forked and versioned on Github or any personal GIT repositroy. Rules are XML based and therefore are easily versioned using delta's. Organizations can fork and reuse rules and make slight alterations to them they fit their local policies.
+
+In this project, a DMN model is executed using a RESTfull API that is provided on the inter organizational network NLX. Organizations on the NLX transport ring can then executre rules that they together maintain.
 
 ## DMN As An NLX Service Example
 
